@@ -94,18 +94,19 @@ If one character to consume 1 "time unit", then algorithm will do 26*N translati
 
 Seems it having some challenges to remove existing one loop and If – Else conditions on algorithm  .
 
-There is one improvement we cand add to this solution by adding cache  implementation in middle if we are applying this solution to large size strings for the processing to reduce over head of string find and replace in every time.
-
-    > calculateCipher(String text,int shift) {
+There is one improvement we can add if shift is a constant always. for example if the shift =5;  then we can add improvement by adding cache  implementation in middle if we are applying this solution to large size strings for the processing to reduce over head of string find and replace in every time.
+    
+       Map<Character,Character> cache = new HashMap<>();
+       int shift = 5 ;
+       calculateCipher(String text) {
           String result = "";
-          Map<Character,Character> cache = new HashMap<>();
           for (Character c : text.toCharArray() ){
            // check whether change character is available on Map /Cache and append to results 
               if(cache.get(c)) != null)  {
                   result += c;
               } else {	        
-                  Charcter rc += c+shift ; 
-                  cache.put(c,rc);
+                // same logic to calculate deciphered character rc
+                cache.put(c,rc);
               }
           }
       }
