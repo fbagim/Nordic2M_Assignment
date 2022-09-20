@@ -1,4 +1,4 @@
-# Nordic2M_Assignment
+# Encrypt/ Decrypt API
 
 This is Provide encrypt /decrypt API Data service to API consumers. Tech Stak based on Java / Spring boot to receive  API request and provide response.
 
